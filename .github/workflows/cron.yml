@@ -1,11 +1,10 @@
 name: Cron
 
 on:
-  push:
-    branches: [main]
-  schedule:
+   workflow_dispatch:
+   schedule:
     - cron: "* 19 * * *"
-  workflow_dispatch:
+  
 
 jobs:
   greet:
