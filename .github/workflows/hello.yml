@@ -1,8 +1,8 @@
-name: Crone jobs
+name: Cron jobs 
  
 on:
   schedule:
-    - cron: "0 0  * * * " 
+    - cron: "45 5  * * * " 
 jobs:
   greet:
     runs-on: ubuntu-latest
