@@ -2,7 +2,7 @@ name: Matrix build
 on:
  push:
 
-job:
+jobs:
   matrix-test:
     runs-on: ${{ matrix.os }}
 
@@ -19,5 +19,5 @@ job:
 
      - name: show python version
        run: python --version
-            
+
 
