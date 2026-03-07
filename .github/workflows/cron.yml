@@ -1,16 +1,22 @@
-name: Cron 
+name: Cron
 
 on:
+  push:
+    branches: [main]
   schedule:
-      - cron: "* *  * * *" 
+    - cron: "* 19 * * *"
+  workflow_dispatch:
+
 jobs:
   greet:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check Repository
         uses: actions/checkout@v4
 
       - name: Print Greeting
         run: echo "hello from github action"
-      - name: Print the current data and time
-        run: data 
+
+      - name: Print current date and time
+        run: date
