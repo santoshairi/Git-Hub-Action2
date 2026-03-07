@@ -1,6 +1,7 @@
 name: Matrix build
+
 on:
- push:
+  push:
 
 jobs:
   matrix-test:
@@ -10,14 +11,17 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version: [3.10, 3.11, 3.12]
+
     steps:
-     - name: Setup python
-       uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-       with:
-         python-version: ${{ matrix.python-version }}    
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
 
-     - name: show python version
-       run: python --version
+      - name: Show python version
+        run: python --version
 
 
