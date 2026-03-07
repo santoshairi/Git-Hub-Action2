@@ -1,4 +1,4 @@
-nme: Crone jobs
+name: Crone jobs
  
 on:
   schedule:
