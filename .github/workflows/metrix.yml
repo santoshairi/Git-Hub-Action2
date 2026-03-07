@@ -1,27 +1,24 @@
-name: Matrix build
+name: matrix build
 
 on:
   push:
+    branches: [main]
 
 jobs:
-  matrix-test:
-    runs-on: ${{ matrix.os }}
+  python-matrix:
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        python-version: [3.10, 3.11, 3.12]
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup python
+      - name: Installing the python versions
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Show python version
+      - name: Print Python Version
         run: python --version
 
 
