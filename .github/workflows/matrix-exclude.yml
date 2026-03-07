@@ -23,6 +23,6 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v5
           with:
-            python: print-version ${{ matrix.python-version }}
+            python-version ${{ matrix.python-version }}
       - name: print python version
         run: python --version   
